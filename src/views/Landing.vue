@@ -15,6 +15,19 @@
 				</ul>
 			</div>
 		</div>
+
+		<div class="menu-mobile">
+			<div class="logo">
+				<img src="../assets/ui/logo-desktop.svg" alt="">
+			</div>
+			<div class="menu-wrapper">
+        <div class="burguer">
+          <div class="b1"></div>
+          <div class="b2"></div>
+          <div class="b3"></div>
+        </div>
+			</div>
+		</div>
 		<div class="menu-spacer"></div>
 
 		<slider
@@ -84,7 +97,7 @@ export default {
 .menu-spacer
 	height: 100px
 
-.menu-desk
+.menu-desk, .menu-mobile
 	z-index: 10
 	position: fixed
 	box-sizing: border-box
@@ -210,6 +223,27 @@ export default {
 			margin: 10px
 			background: white
 
+$distanceBurguer: 6px
+.burguer
+  position: relative
+  width: 30px
+  height: 60px
+
+  .b1, .b2, .b3
+    display: inline-block
+    left: 0
+    position: absolute
+    width: 20px
+    height: 2.5px
+    background: black
+
+  .b1
+    top: calc(0 * #{$distanceBurguer})
+  .b2
+    top: calc(1 * #{$distanceBurguer})
+  .b3
+    top: calc(2 * #{$distanceBurguer})
+
 .footer
 	background: #3d3d3d
 	padding: 30px
@@ -233,5 +267,15 @@ export default {
 	.copyright
 		width: 100%
 		text-align: center
+
+.menu-mobile
+  display: none
+
+@media (max-width: 800px)
+  .menu-desk
+    display: none
+
+  .menu-mobile
+    display: flex
 
 </style>
